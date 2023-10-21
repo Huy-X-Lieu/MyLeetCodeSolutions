@@ -13,3 +13,42 @@ public class TreeNode
         this.right = right;
     }
 }
+
+public static class MyTreeFunctions
+{
+    public static TreeNode CreateTreeFromListOfInt(List<int> nums)
+    {
+        TreeNode root = new TreeNode(nums[0]);
+        for(int i = 1; i < nums.Count; i++)
+            Add(root, nums[i]);
+        return root;
+    }
+
+    public static void Add(TreeNode root, int 
+            num)
+    {
+        if (root.val < num)
+        {
+            if (root.right == null)
+            {
+                root.right = new TreeNode(num);
+            }
+            else
+            {
+                Add(root.right, num);
+            }
+        }
+
+        if (root.val > num)
+        {
+            if (root.left == null)
+            {
+                root.left = new TreeNode(num);
+            }
+            else
+            {
+                Add(root.left, num);
+            }
+        }
+    }
+}

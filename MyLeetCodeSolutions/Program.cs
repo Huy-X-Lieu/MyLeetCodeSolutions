@@ -1,3 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using myLeetCodeSolutions.String;
 
-Console.WriteLine("Hello, World!");
+string s = ".P";
+var validator = new Palindrome();
+Console.WriteLine(validator.IsPalindrome(s));
